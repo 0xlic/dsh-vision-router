@@ -1,0 +1,4 @@
+- insert:
+    - id: vision-router
+      name: '@lichen/dsh-vision-router'
+      config: {}

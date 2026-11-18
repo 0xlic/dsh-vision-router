@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Vision router",
+    "description": "Provides vision_read to allowlisted non-multimodal models and relaxes DSH's image admission check for them: pasted images enter the session and are recognized through the tool, never sent to the text model itself. Click Add and fuzzy-search models in Settings → Vision router; reorder with ↑ / ↓. Every change applies immediately. Errors and timeouts try the next model; cancellation stops. Reuses existing DSH connections; supports local images and session attachments, not image URLs."
+  }
+}

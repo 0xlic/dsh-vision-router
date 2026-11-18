@@ -1,0 +1,24 @@
+{
+  "name": "@lichen/dsh-vision-router",
+  "version": "0.3.1",
+  "description": "Conditional vision tool with ordered fallback through existing DSH models",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "router.js", "image.js", "catalog.js", "admission.js", "step-policy.js", "ui-state.js", "client-main.js", "client.js", "scripts/build-client.mjs", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE"],
+  "scripts": { "build": "node scripts/build-client.mjs", "test": "node --test test/*.test.js", "check": "node --check index.js && node --check router.js && node --check image.js && node --check catalog.js && node --check admission.js && node --check step-policy.js && node --check ui-state.js && node --check client-main.js && node --check client.js && node scripts/build-client.mjs --check" },
+  "peerDependencies": { "@deepseek-ai/schemastery": "~3.19.0" },
+  "engines": { "node": ">=22", "dsh": ">=0.2.2-rc.3 <0.3.0" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web", "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-settings", "@deepseek-ai/dsh-client-ui-settings-general"]
+    }
+  }
+}
